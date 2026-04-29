@@ -1,0 +1,19 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Media keep local
+ex-audio/
+video/
+audio/
+videos/
+
+# Outputs if large
+*.mp4
+*.mp3
+*.wav
+*.mkv
+
+# OS junk
+.DS_Store
