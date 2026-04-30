@@ -17,3 +17,8 @@ videos/
 
 # OS junk
 .DS_Store
+
+#jsons
+*.json
+Json/
+Json_edgecase/
