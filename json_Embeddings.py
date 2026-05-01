@@ -5,6 +5,8 @@ import json
 import math
 import requests
 import pandas as pd
+from sklearn.metrics.pairwise import cosine_similarity as cs
+import joblib
 
 # replace the Nan values 
 def clean_embeddings(e):
@@ -92,14 +94,21 @@ for json_files in jsons:
         chunk["embedding"] = clean_embeddings(emb)
         chunk_id +=1
         my_dict.append(chunk)
-    
+
 
 #Build Dataframe
 if not my_dict:
     print("No Embeddings Created")
 else:
     df = pd.DataFrame.from_records(my_dict)
-    print("\nSample data:")
-    print(df.head())
-    print(f"\n Total Rows : {len(df)}")
+    # save this data base
+    joblib.dump(df,"embeddings.joblib")
+
+    
+    # print(f"\n Total Rows : {len(df)}")
+
+
+
+
+
 
